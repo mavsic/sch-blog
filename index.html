@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Матвей Андриенко</title>
+
+	<!-- build:css inline -->
+	<link rel="stylesheet" href="css/site.css">
+	<!-- /build -->
+
+	<link rel="shortcut icon" href="i/favicon.png">
+</head>
+<body>
+	<div class="site">
+		<header class="site__header header">
+			<h1 class="header__title">Матвей Андриенко</h1>
+		</header>
+		<main class="site__content">
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						Крутость JSPM<!--
+						--><a name="jspm" href="#jspm" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-05-17" class="post__date"></time>
+				</header>
+				<p class="lead">Эту версию сайта я делал, используя пакетный менеджер для яваскриптового фронтэнда <a href="http://jspm.io/">JSPM</a> — и мне   понравилось. Вот почему.</p>
+				<aside>
+					<strong>В тексте упоминаются</strong>: <br />
+					пакетные менеджеры <a href="http://bower.io/">Bower</a> и <a href="http://jspm.io/">JSPM</a>, <br />
+					загрузчики модулей <a href="http://requirejs.org/">RequireJS</a> и <a href="https://github.com/systemjs/systemjs">SystemJS</a>, <br />
+					<a href="http://requirejs.org/docs/optimization.html">RequireJS Optimizer</a>, <br />
+					сборщик <a href="http://gruntjs.com/">Grunt</a>, плагины для него: <nobr><a href="https://github.com/yeoman/grunt-bower-requirejs">grunt-bower-requirejs</nobr></a> и <nobr><a href="https://github.com/dciccale/grunt-processhtml/">grunt-processhtml</a></nobr>, <br />
+					<a href="https://github.com/">гитхаб</a> и <a href="https://www.npmjs.com/">npm</a>.
+				</aside>
+				<p>Обычно для получения фронтэндовых пакетов используют Bower. Для удобного использования <nobr>Bower-пакетов</nobr> с загрузчиком модулей приходится использовать заклинания вроде <nobr>grunt-bower-requirejs</nobr>, чтобы конфиг с путями к модулям для RequireJS создавался автоматически.</p>
+				<p>В отличие от Bower, который фактически умеет только скачивать пакеты, JSPM изначально создавался с расчетом на использование загручика модулей SystemJS. При инициализации проекта SystemJS скачивается автоматически, а при установке пакетов они сразу прописываются в конфиг. Пакеты устанавливаются с гитхаба и из npm, плюс ведется <a href="http://kasperlewau.github.io/registry/">модерируемый реестр</a>. Как бонус, появляется возможность использовать ES6.</p>
+				<p>JSPM умеет собирать код в один файл. Делаем <code>jspm <nobr>bundle-sfx</nobr></code> — и получаем единственный файл для использования на продакшене вообще без загрузчика модулей, только, <nobr>почему-то</nobr>, не минифицированный.</p>
+				<p>Таким образом, четыре инструмента (Bower, RequireJS, RequireJS Optimizer и <nobr>grunt-bower-requirejs</nobr>) заменены одним JSPM. Мне не хватает только встроенной склейки и минификации CSS (как в оптимизаторе RequireJS), тогда Grunt стал бы совсем не нужен. Но пока без сборщика не обойтись.</p>
+				<h3 class="spoiler__toggle"><a>Бонус: Gruntfile для типичного проекта с JSPM</a></h3>
+				<div class="spoiler__content">
+					<p class="p_nosp">Задача:</p>
+					<ul class="list_compact">
+						<li>собрать яваскрипт в один минифицированный файл,</li>
+						<li>минифицировать CSS, выполнить подстановки <code>@import</code>,</li>
+						<li>подготовить папку с готовыми для публикации файлами проекта.</li>
+					</ul>
+					<p>Решение: вот такой <strong><a href="https://gist.github.com/mavsic/b87f9d3ca02b7b048424">Gruntfile</a></strong>.</p>
+					<p class="p_nosp">Структура проекта:</p>
+					<ul class="list_compact">
+						<li>Весь код в папке <code>js/</code>,</li>
+						<li>основной модуль проекта называется <code>js/main</code>,</li>
+						<li>все стили в папке <code>css/</code>,</li>
+						<li>файл <code>index.html</code> выглядит так:</li>
+					</ul>
+					<pre><code class="language-markup">&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;My Super App&lt;/title&gt;
+	&lt;link rel="stylesheet" href="css/site.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	...
+
+	&lt;!-- Код ниже — стандартный при использовании JSPM:
+	подключаем загрузчик и конфиг, загружаем основной модуль: --&gt;
+
+	&lt;!-- build:script js/site.js --&gt;
+	&lt;script src="jspm_packages/system.js"&gt;&lt;/script&gt;
+	&lt;script src="config.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		System.import('js/main');
+	&lt;/script&gt;
+	&lt;!-- /build --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<p>Gruntfile первым делом выполняет команду <code>jspm bundle-sfx js/main build/js/site.js</code> в командной строке. JSPM анализирует зависимости модулей друг от друга и создает файл <code>site.js</code> в подпапке <code>build/</code>, содержащий объединенный код всех используемых модулей в правильном порядке.</p>
+	    			<p>Теперь было бы здорово автоматически заменять в <nobr>HTML-файлах</nobr> все теги <code>&lt;script&gt;</code> на единственный тег с подключением минифицированного файла <code>site.js</code>. Хорошо, что для этого придумали плагин <nobr>grunt-processhtml</nobr>! Если окружить теги <code>&lt;script&gt;</code> специальными комментариями (как мы и сделали в файле <code>index.html</code>):</p>
+					<pre><code class="language-markup">&lt;!-- build:script js/site.js --&gt;
+&lt;script src="jspm_packages/system.js"&gt;&lt;/script&gt;
+&lt;script src="config.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+	System.import('js/main');
+&lt;/script&gt;
+&lt;!-- /build --&gt;</code></pre>
+					<p>то плагин выполнит замену:</p>
+					<pre class="language-markup"><code>&lt;script src="js/site.js"&gt;&lt;/script&gt;</code></pre>
+					<p>Более того, если добавить к спецкомментариям слово <code>inline</code>, то скрипт или таблица стилей будет встроена прямо в файл — еще меньше запросов к серверу! C такими поправками файл станет полностью самодостаточным:</p>
+					<pre><code class="language-markup">&lt;html&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;My Super App&lt;/title&gt;
+	&lt;!-- build:css inline --&gt;
+	&lt;link rel="stylesheet" href="css/site.css"&gt;
+	&lt;!-- /build --&gt;	
+&lt;/head&gt;
+&lt;body&gt;
+	...
+
+	&lt;!-- build:script inline js/site.js --&gt;
+	&lt;script src="jspm_packages/system.js"&gt;&lt;/script&gt;
+	&lt;script src="config.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		System.import('js/main');
+	&lt;/script&gt;
+	&lt;!-- /build --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<p>Такой воркфлоу я использую для публикации этого сайта.</p>
+				</div>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						Игги Поп на BBC Radio 6 Music<!--
+						--><a name="iggy-radio" href="#iggy-radio" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-04-12" class="post__date"></time>
+				</header>
+				<aside>Хуже всего, что записи удаляются из BBC iPlayer через месяц после эфира.</aside>
+				<p>Игги Поп ведет очень годный музыкальный эфир на BBC Radio 6 Music. Официально слушать эфиры в записи можно только через <a href="http://www.bbc.co.uk/programmes/b03yblbx/broadcasts/2015/05">BBC iPlayer</a>, что не всегда удобно. Я <a href="iggy/">сделал сайт</a>, куда выкладываются записи эфиров и <nobr>трек-листы</nobr>:</p>
+				<p class="image">
+					<a class="project-link" href="iggy/"><img data-src="i/iggy-radio.png" width="700" height="612" /></a>
+				</p>
+				<p><strong>Технологии:</strong> Backbone, RequireJS, Mustache, иконочный шрифт (использую <a href="https://icomoon.io/app/">IcoMoon App</a>, крутой инструмент), HTML5 Audio (написал клевую обертку над стандартным HTMLMediaElement, расскажу в следующий раз).</p>
+				<p>Проект поддерживается моими силами, новые эпизоды могут появляться с задержкой.</p>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						Irn Bru<!--
+						--><a name="irn-bru" href="#irn-bru" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-01-21" class="post__date">21 января 2015</time>
+				</header>
+				<p class="image">
+					<img data-src="i/irn-bru.jpg" width="700" height="204" />
+				</p>
+				<p>Попробовал напиток, постоянно попадавшийся на глаза, но который до этого ни разу не покупал: <nobr>Irn-Bru</nobr> — второй по известности шотландский напиток после скотча. Необычно, и <em>grows on you</em>. Вот еще напиток с названием из двух слов по три буквы: Mnt Dew.</p>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						Загрузка твитов яваскриптом без авторизации <s>и смс</s><!--
+						--><a name="load-tweets" href="#load-tweets" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-01-19" class="post__date"></time>
+				</header>
+				<aside>Самому Твиттеру авторизация нужна для статистики: «This visibility [...] helps us to further understand how categories of applications are using the API». (<a href="https://dev.twitter.com/rest/public">Источник</a>)</aside>
+				<p>Текущий REST API Твиттера требует обязательной авторизации. Это неудобно и глупо, например, для чтения твитов из открытого аккаунта авторизация явно лишняя.</p>
+				<p>Зато при использовании виджетов авторизация не требуется, что дает возможность получить последние твиты пользователя (не более 20) чисто клиентским яваскриптом. Идея в том, чтобы загрузить виджет в скрытый контейнер на странице, а потом распарсить его содержание. Моя небольшая библиотека это и делает, использовать ее можно так:</p>
+				<pre><code class="language-javascript">loadTweets('123456789012345678', 10).done(function(tweets) {
+	console.log(tweets);
+});</code></pre>
+				<p>Здесь первый параметр — ID виджета, созданного <a href="https://twitter.com/settings/widgets">в настройках профиля</a>, второй параметр — количество твитов для загрузки. Все работает асинхронно и возвращает jQuery Deferred, который разрешается массивом твитов.</p>
+				<p>Код, оформленный в виде модуля RequireJS, и крошечная документация доступны <a href="https://bitbucket.org/mavsic/loadtweets">в репозитории на битбакете</a>.</p>
+			</article>
+		</main>
+		<footer class="site__footer footer">
+			2015
+		</footer>
+	</div>
+
+	<!-- build:js inline js/site.js -->
+	<script src="jspm_packages/system.js"></script>
+	<script src="config.js"></script>
+	<script>
+		System.import('main');
+	</script>
+	<!-- /build -->
+</body>
+</html>

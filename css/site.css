@@ -1,0 +1,150 @@
+@import url(basic.css);
+@import url(prism.css);
+
+html {
+	font-family: 'Helvetica Neue', Helvetica, 'Arial Unicode MS', Arial, sans-serif;
+	font-size: 24px;
+}
+
+body {
+	margin: 0;
+	min-width: 720px;
+}
+
+.site {
+	display: block;
+	font-size: 15px;
+	line-height: 1rem;
+	margin: 2rem 5% 3rem 5%;
+}
+
+.site__header {
+	margin-bottom: 4rem;
+}
+
+.header__title {
+	font-size: 1em;
+	margin: 0;
+}
+
+.site__content {
+	display: block;
+	max-width: 960px;
+	margin-bottom: 4rem;
+	width: 64%;
+}
+
+.post {
+	margin-bottom: 3.5rem;
+}
+
+.post__header {
+	margin:  0 0 1rem 0;
+}
+
+.post__anchor {
+	display: none;
+	border: none;
+	vertical-align: middle;
+	font-weight: normal;
+	font-size: 27px;
+	width: 1rem;
+	margin: 0 -1.5rem 0 0.5rem;
+	line-height: 1;
+}
+
+.post__anchor::after {
+	content: '✣';
+}
+
+.post__header:hover .post__anchor {
+	display: inline-block;
+}
+
+.post__title {
+	font-size: 47px;
+	line-height: 2rem;
+	/* Left margin is a visual compensation for large letters */
+	margin: 0 0 0 -0.05em;
+}
+
+.post__date {
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-size: 11px;
+	margin: 0.125rem 0 -0.125rem;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.post__date::after {
+	content: '\200B';
+}
+
+.post__date_humanized {
+	opacity: 1;
+}
+
+aside {
+	float: right;
+	width: 32%;
+	margin-right: -44%;
+	font-size: 13px;
+}
+
+.project-link {
+	display: inline-block;
+	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+	border: none;
+	margin: 0.5rem 0 1.5rem;
+	transition: box-shadow 0.2s;
+}
+
+.project-link:hover {
+	box-shadow: 0 0.5rem 2rem rgba(76, 20, 13, 0.6);
+}
+
+.project-link:active {
+	box-shadow: 0 0.5rem 1.5rem rgba(76, 20, 13, 0.6);
+}
+
+.spoiler__toggle {
+	margin-top: 0;
+	transition: padding 0.5s;
+}
+
+.spoiler__toggle a {
+	border-style: dashed;
+}
+
+.spoiler__toggle_expanded {
+	padding: 0.5rem 0.5rem 0;
+	border-top: 1px dotted rgba(0, 0, 0, 0.3);
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.spoiler__toggle_expanded a {
+	color: #000;
+	border: none;
+}
+
+.spoiler__content {
+	display: none;
+	padding: 0 0.5rem 0.5rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+	border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.footer {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.footer::before {
+	content: '—';
+	display: block;
+	font-size: 15px;
+	font-weight: normal;
+}
