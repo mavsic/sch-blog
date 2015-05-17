@@ -15,3 +15,7 @@ Then you can run it on a local webserver. To create a production-ready version, 
     grunt build
     
 After build is competed files from ``build/`` directory can be deployed to server.
+
+## Sublime Text Build System
+
+It also comes with a preconfigured Sublime Text project which includes a simple build system to run the build process.
