@@ -19,25 +19,25 @@
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
-						Крутость JSPM<!--
+						Крутость jspm<!--
 						--><a name="jspm" href="#jspm" class="post__anchor"></a>
 					</h2>
 					<time datetime="2015-05-17" class="post__date"></time>
 				</header>
-				<p class="lead">Эту версию сайта я делал, используя пакетный менеджер для яваскриптового фронтэнда <a href="http://jspm.io/">JSPM</a> — и мне   понравилось. Вот почему.</p>
+				<p class="lead">Эту версию сайта я делал, используя пакетный менеджер для яваскриптового фронтэнда <a href="http://jspm.io/">jspm</a> — и мне   понравилось. Вот почему.</p>
 				<aside>
 					<strong>В тексте упоминаются</strong>: <br />
-					пакетные менеджеры <a href="http://bower.io/">Bower</a> и <a href="http://jspm.io/">JSPM</a>, <br />
+					пакетные менеджеры <a href="http://bower.io/">Bower</a> и <a href="http://jspm.io/">jspm</a>, <br />
 					загрузчики модулей <a href="http://requirejs.org/">RequireJS</a> и <a href="https://github.com/systemjs/systemjs">SystemJS</a>, <br />
 					<a href="http://requirejs.org/docs/optimization.html">RequireJS Optimizer</a>, <br />
 					сборщик <a href="http://gruntjs.com/">Grunt</a>, плагины для него: <nobr><a href="https://github.com/yeoman/grunt-bower-requirejs">grunt-bower-requirejs</nobr></a> и <nobr><a href="https://github.com/dciccale/grunt-processhtml/">grunt-processhtml</a></nobr>, <br />
 					<a href="https://github.com/">гитхаб</a> и <a href="https://www.npmjs.com/">npm</a>.
 				</aside>
 				<p>Обычно для получения фронтэндовых пакетов используют Bower. Для удобного использования <nobr>Bower-пакетов</nobr> с загрузчиком модулей приходится использовать заклинания вроде <nobr>grunt-bower-requirejs</nobr>, чтобы конфиг с путями к модулям для RequireJS создавался автоматически.</p>
-				<p>В отличие от Bower, который фактически умеет только скачивать пакеты, JSPM изначально создавался с расчетом на использование загручика модулей SystemJS. При инициализации проекта SystemJS скачивается автоматически, а при установке пакетов они сразу прописываются в конфиг. Пакеты устанавливаются с гитхаба и из npm, плюс ведется <a href="http://kasperlewau.github.io/registry/">модерируемый реестр</a>. Как бонус, появляется возможность использовать ES6.</p>
-				<p>JSPM умеет собирать код в один файл. Делаем <code>jspm <nobr>bundle-sfx</nobr></code> — и получаем единственный файл для использования на продакшене вообще без загрузчика модулей, только, <nobr>почему-то</nobr>, не минифицированный.</p>
-				<p>Таким образом, четыре инструмента (Bower, RequireJS, RequireJS Optimizer и <nobr>grunt-bower-requirejs</nobr>) заменены одним JSPM. Мне не хватает только встроенной склейки и минификации CSS (как в оптимизаторе RequireJS), тогда Grunt стал бы совсем не нужен. Но пока без сборщика не обойтись.</p>
-				<h3 class="spoiler__toggle"><a>Бонус: Gruntfile для типичного проекта с JSPM</a></h3>
+				<p>В отличие от Bower, который фактически умеет только скачивать пакеты, jspm изначально создавался с расчетом на использование загручика модулей SystemJS. При инициализации проекта SystemJS скачивается автоматически, а при установке пакетов они сразу прописываются в конфиг. Пакеты устанавливаются с гитхаба и из npm, плюс ведется <a href="http://kasperlewau.github.io/registry/">модерируемый реестр</a>. Как бонус, появляется возможность использовать ES6.</p>
+				<p>jspm умеет собирать код в один файл. Делаем <code>jspm <nobr>bundle-sfx</nobr></code> — и получаем единственный файл для использования на продакшене вообще без загрузчика модулей, только, <nobr>почему-то</nobr>, не минифицированный.</p>
+				<p>Таким образом, четыре инструмента (Bower, RequireJS, RequireJS Optimizer и <nobr>grunt-bower-requirejs</nobr>) заменены одним jspm. Мне не хватает только встроенной склейки и минификации CSS (как в оптимизаторе RequireJS), тогда Grunt стал бы совсем не нужен. Но пока без сборщика не обойтись.</p>
+				<h3 class="spoiler__toggle"><a>Бонус: Gruntfile для типичного проекта с jspm</a></h3>
 				<div class="spoiler__content">
 					<p class="p_nosp">Задача:</p>
 					<ul class="list_compact">
@@ -62,7 +62,7 @@
 &lt;body&gt;
 	...
 
-	&lt;!-- Код ниже — стандартный при использовании JSPM:
+	&lt;!-- Код ниже — стандартный при использовании jspm:
 	подключаем загрузчик и конфиг, загружаем основной модуль: --&gt;
 
 	&lt;!-- build:script js/site.js --&gt;
@@ -74,7 +74,7 @@
 	&lt;!-- /build --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-					<p>Gruntfile первым делом выполняет команду <code>jspm bundle-sfx js/main build/js/site.js</code> в командной строке. JSPM анализирует зависимости модулей друг от друга и создает файл <code>site.js</code> в подпапке <code>build/</code>, содержащий объединенный код всех используемых модулей в правильном порядке.</p>
+					<p>Gruntfile первым делом выполняет команду <code>jspm bundle-sfx js/main build/js/site.js</code> в командной строке. jspm анализирует зависимости модулей друг от друга и создает файл <code>site.js</code> в подпапке <code>build/</code>, содержащий объединенный код всех используемых модулей в правильном порядке.</p>
 	    			<p>Теперь было бы здорово автоматически заменять в <nobr>HTML-файлах</nobr> все теги <code>&lt;script&gt;</code> на единственный тег с подключением минифицированного файла <code>site.js</code>. Хорошо, что для этого придумали плагин <nobr>grunt-processhtml</nobr>! Если окружить теги <code>&lt;script&gt;</code> специальными комментариями (как мы и сделали в файле <code>index.html</code>):</p>
 					<pre><code class="language-markup">&lt;!-- build:script js/site.js --&gt;
 &lt;script src="jspm_packages/system.js"&gt;&lt;/script&gt;
