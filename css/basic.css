@@ -31,12 +31,9 @@ p:last-child {
 .image {
 	margin: 1.5rem 0;
 	opacity: 0;
+	width: 156.25%;
 	transform: translate(0, 0.5rem);
 	transition: opacity 0.25s, transform 0.25s;
-}
-
-.image:first-child {
-	margin-top: 0;
 }
 
 .image:last-child {
@@ -51,6 +48,8 @@ p:last-child {
 .image img {
 	background: #F2F1EF;
 	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
 }
 
 .image_unveiled img {

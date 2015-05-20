@@ -19,23 +19,45 @@
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
+						Сложно ли сделать хороший музыкальный плеер?<!--
+						--><a name="perfect-player" href="#perfect-player" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-05-20" class="post__date"></time>
+				</header>
+				<section class="post__content">
+					<p class="image">
+						<img data-src="i/perfect-player.png" width="960" height="382" />
+					</p>
+					<p class="lead">Судя по всему — да. Для Windows Phone пока никто не сделал. А казалось бы, всего четыре простых правила:</p>
+					<aside>Я указываю LP, EP или Single в теге <code>RELEASETYPE</code>, удобно для классификации.</aside>
+					<p><strong>Уважать пользовательские данные.</strong> Если у альбома уже указана обложка, не надо пытаться скачать другую из интернета, мне нравится моя. <em>Совсем</em> идеальный плеер поддерживает классификацию по любым тегам, указанным пользователем.</p>
+					<p><strong>Уметь сортировать альбомы по году.</strong> В сортировке альбомов по названию, на мой взгляд, мало смысла. Я легко представляю себе ситуацию, когда пользователь хочет послушать «ранних Битлов», а для перехода к конкретному альбому есть поиск.</p>
+					<p><strong>То, что сортируется по названию, — сортировать правильно.</strong> Артикли ‘a’, ‘an’, ‘the’ в начале названия исполнителя не должны учитываться при сортировке.</p>
+					<p><strong>Поддерживать альбомы из нескольких дисков.</strong> Обычно номер диска указывают в названии альбома: например, <em>The Next Day, Disc 1</em> и <em>The Next Day, Disc 2</em>, но правильнее делать это в специальном теге <code>DISCNUMBER</code>, который почти никто <nobr>почему-то</nobr> не поддерживает.</p>
+				</section>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
 						Вертикальный ритм и врезки<!--
 						--><a name="vrythm" href="#vrythm" class="post__anchor"></a>
 					</h2>
 					<time datetime="2015-05-18" class="post__date"></time>
 				</header>
-				<p class="lead">Верстать хорошо так, чтобы расстояния между строками были кратны одну и тому же базовому значению. Это называется вертикальным ритмом.</p>
-				<aside>В сносках размер шрифта меньше, а высота строки — как в основном тексте.</aside>
-				<p>Например, высота строк этого текста — 24 пикселя, и отсуп между абзацами тоже 24 пикселя, чтобы ритм не сбивался. У крупных заголовков высота строки ровно в два раза больше: 48 пикселей — и ритм снова сохраняется.</p>
-				<p>Вертикальный ритм пришел из книг, где хочется, чтобы строки на левой и правой сторонах разворота «сидели» на одних и тех же базовых линиях. Как, например, <a href="https://www.artlebedev.ru/everything/izdal/kniga-na-knizhnoy-polke/">в этом издании</a> «Книги на книжной полке» Генри Петроски, строки аккуратно выровнены по базовым линиям:</p>
-				<p class="image">
-					<img data-src="i/vrythm-1.png" width="896" height="673" />
-				</p>
-				<p>Но иногда <nobr>все-таки</nobr> приходится вставить на полосу врезку с высотой строки, не кратной базовой. Как тогда сохранить вертикальный ритм? В этой книге общую высоту врезки «добивают» до кратной базовой за счет дополнительных отсупов до и после. Обратите внимание на различный размер отступов у врезок на этом развороте:</p>
-				<p class="image">
-					<img data-src="i/vrythm-2.png" width="896" height="673" />
-				</p>
-				<p>Таким образом и в этой ситуации вертикальный ритм удается сохранить. Отличный прием!</p>
+				<section class="post__content">
+					<p class="lead">Верстать хорошо так, чтобы расстояния между строками были кратны одну и тому же базовому значению. Это называется вертикальным ритмом.</p>
+					<aside>В сносках размер шрифта меньше, а высота строки — как в основном тексте.</aside>
+					<p>Например, высота строк этого текста — 24 пикселя, и отсуп между абзацами тоже 24 пикселя, чтобы ритм не сбивался. У крупных заголовков высота строки ровно в два раза больше: 48 пикселей — и ритм снова сохраняется.</p>
+					<p>Вертикальный ритм пришел из книг, где хочется, чтобы строки на левой и правой сторонах разворота «сидели» на одних и тех же базовых линиях. Как, например, <a href="https://www.artlebedev.ru/everything/izdal/kniga-na-knizhnoy-polke/">в этом издании</a> «Книги на книжной полке» Генри Петроски, строки аккуратно выровнены по базовым линиям:</p>
+					<p class="image">
+						<img data-src="i/vrythm-1.png" width="896" height="673" />
+					</p>
+					<p>Но иногда <nobr>все-таки</nobr> приходится вставить на полосу врезку с высотой строки, не кратной базовой. Как тогда сохранить вертикальный ритм? В этой книге общую высоту врезки «добивают» до кратной базовой за счет дополнительных отсупов до и после. Обратите внимание на различный размер отступов у врезок на этом развороте:</p>
+					<p class="image">
+						<img data-src="i/vrythm-2.png" width="896" height="673" />
+					</p>
+					<p>Таким образом и в этой ситуации вертикальный ритм удается сохранить. Отличный прием!</p>
+				</section>
 			</article>
 			<article class="post">
 				<header class="post__header">
@@ -45,36 +67,37 @@
 					</h2>
 					<time datetime="2015-05-17" class="post__date"></time>
 				</header>
-				<p class="lead">Эту версию сайта я делал, используя пакетный менеджер для яваскриптового фронтэнда <a href="http://jspm.io/">jspm</a> — и мне   понравилось. Вот почему.</p>
-				<aside>
-					<strong>В тексте упоминаются</strong>: <br />
-					пакетные менеджеры <a href="http://bower.io/">Bower</a> и <a href="http://jspm.io/">jspm</a>, <br />
-					загрузчики модулей <a href="http://requirejs.org/">RequireJS</a> и <a href="https://github.com/systemjs/systemjs">SystemJS</a>, <br />
-					<a href="http://requirejs.org/docs/optimization.html">RequireJS Optimizer</a>, <br />
-					сборщик <a href="http://gruntjs.com/">Grunt</a>, плагины для него: <nobr><a href="https://github.com/yeoman/grunt-bower-requirejs">grunt-bower-requirejs</nobr></a> и <nobr><a href="https://github.com/dciccale/grunt-processhtml/">grunt-processhtml</a></nobr>, <br />
-					<a href="https://github.com/">гитхаб</a> и <a href="https://www.npmjs.com/">npm</a>.
-				</aside>
-				<p>Обычно для получения фронтэндовых пакетов используют Bower. Для удобного использования <nobr>Bower-пакетов</nobr> с загрузчиком модулей приходится использовать заклинания вроде <nobr>grunt-bower-requirejs</nobr>, чтобы конфиг с путями к модулям для RequireJS создавался автоматически.</p>
-				<p>В отличие от Bower, который фактически умеет только скачивать пакеты, jspm изначально создавался с расчетом на использование загручика модулей SystemJS. При инициализации проекта SystemJS скачивается автоматически, а при установке пакетов они сразу прописываются в конфиг. Пакеты устанавливаются с гитхаба и из npm, плюс ведется <a href="http://kasperlewau.github.io/registry/">модерируемый реестр</a>. Как бонус, появляется возможность использовать ES6.</p>
-				<p>jspm умеет собирать код в один файл. Делаем <code>jspm <nobr>bundle-sfx</nobr></code> — и получаем единственный файл для использования на продакшене вообще без загрузчика модулей, только, <nobr>почему-то</nobr>, не минифицированный.</p>
-				<p>Таким образом, четыре инструмента (Bower, RequireJS, RequireJS Optimizer и <nobr>grunt-bower-requirejs</nobr>) заменены одним jspm. Мне не хватает только встроенной склейки и минификации CSS (как в оптимизаторе RequireJS), тогда Grunt стал бы совсем не нужен. Но пока без сборщика не обойтись.</p>
-				<h3 class="spoiler__toggle"><a>Бонус: Gruntfile для типичного проекта с jspm</a></h3>
-				<div class="spoiler__content">
-					<p class="p_nosp">Задача:</p>
-					<ul class="list_compact">
-						<li>собрать яваскрипт в один минифицированный файл,</li>
-						<li>минифицировать CSS, выполнить подстановки <code>@import</code>,</li>
-						<li>подготовить папку с готовыми для публикации файлами проекта.</li>
-					</ul>
-					<p>Решение: вот такой <strong><a href="https://gist.github.com/mavsic/b87f9d3ca02b7b048424">Gruntfile</a></strong>.</p>
-					<p class="p_nosp">Структура проекта:</p>
-					<ul class="list_compact">
-						<li>Весь код в папке <code>js/</code>,</li>
-						<li>основной модуль проекта называется <code>js/main</code>,</li>
-						<li>все стили в папке <code>css/</code>,</li>
-						<li>файл <code>index.html</code> выглядит так:</li>
-					</ul>
-					<pre><code class="language-markup">&lt;html&gt;
+				<section class="post__content">
+					<p class="lead">Эту версию сайта я делал, используя пакетный менеджер для яваскриптового фронтэнда <a href="http://jspm.io/">jspm</a> — и мне   понравилось. Вот почему.</p>
+					<aside>
+						<strong>В тексте упоминаются</strong>: <br />
+						пакетные менеджеры <a href="http://bower.io/">Bower</a> и <a href="http://jspm.io/">jspm</a>, <br />
+						загрузчики модулей <a href="http://requirejs.org/">RequireJS</a> и <a href="https://github.com/systemjs/systemjs">SystemJS</a>, <br />
+						<a href="http://requirejs.org/docs/optimization.html">RequireJS Optimizer</a>, <br />
+						сборщик <a href="http://gruntjs.com/">Grunt</a>, плагины для него: <nobr><a href="https://github.com/yeoman/grunt-bower-requirejs">grunt-bower-requirejs</nobr></a> и <nobr><a href="https://github.com/dciccale/grunt-processhtml/">grunt-processhtml</a></nobr>, <br />
+						<a href="https://github.com/">гитхаб</a> и <a href="https://www.npmjs.com/">npm</a>.
+					</aside>
+					<p>Обычно для получения фронтэндовых пакетов используют Bower. Для удобного использования <nobr>Bower-пакетов</nobr> с загрузчиком модулей приходится использовать заклинания вроде <nobr>grunt-bower-requirejs</nobr>, чтобы конфиг с путями к модулям для RequireJS создавался автоматически.</p>
+					<p>В отличие от Bower, который фактически умеет только скачивать пакеты, jspm изначально создавался с расчетом на использование загручика модулей SystemJS. При инициализации проекта SystemJS скачивается автоматически, а при установке пакетов они сразу прописываются в конфиг. Пакеты устанавливаются с гитхаба и из npm, плюс ведется <a href="http://kasperlewau.github.io/registry/">модерируемый реестр</a>. Как бонус, появляется возможность использовать ES6.</p>
+					<p>jspm умеет собирать код в один файл. Делаем <code>jspm <nobr>bundle-sfx</nobr></code> — и получаем единственный файл для использования на продакшене вообще без загрузчика модулей, только, <nobr>почему-то</nobr>, не минифицированный.</p>
+					<p>Таким образом, четыре инструмента (Bower, RequireJS, RequireJS Optimizer и <nobr>grunt-bower-requirejs</nobr>) заменены одним jspm. Мне не хватает только встроенной склейки и минификации CSS (как в оптимизаторе RequireJS), тогда Grunt стал бы совсем не нужен. Но пока без сборщика не обойтись.</p>
+					<h3 class="spoiler__toggle"><a>Бонус: Gruntfile для типичного проекта с jspm</a></h3>
+					<div class="spoiler__content">
+						<p class="p_nosp">Задача:</p>
+						<ul class="list_compact">
+							<li>собрать яваскрипт в один минифицированный файл,</li>
+							<li>минифицировать CSS, выполнить подстановки <code>@import</code>,</li>
+							<li>подготовить папку с готовыми для публикации файлами проекта.</li>
+						</ul>
+						<p>Решение: вот такой <strong><a href="https://gist.github.com/mavsic/b87f9d3ca02b7b048424">Gruntfile</a></strong>.</p>
+						<p class="p_nosp">Структура проекта:</p>
+						<ul class="list_compact">
+							<li>Весь код в папке <code>js/</code>,</li>
+							<li>основной модуль проекта называется <code>js/main</code>,</li>
+							<li>все стили в папке <code>css/</code>,</li>
+							<li>файл <code>index.html</code> выглядит так:</li>
+						</ul>
+						<pre><code class="language-markup">&lt;html&gt;
 &lt;head&gt;
 	&lt;meta charset="UTF-8"&gt;
 	&lt;title&gt;My Super App&lt;/title&gt;
@@ -95,19 +118,19 @@
 	&lt;!-- /build --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-					<p>Gruntfile первым делом выполняет команду <code>jspm bundle-sfx js/main build/js/site.js</code> в командной строке. jspm анализирует зависимости модулей друг от друга и создает файл <code>site.js</code> в подпапке <code>build/</code>, содержащий объединенный код всех используемых модулей в правильном порядке.</p>
-	    			<p>Теперь было бы здорово автоматически заменять в <nobr>HTML-файлах</nobr> все теги <code>&lt;script&gt;</code> на единственный тег с подключением минифицированного файла <code>site.js</code>. Хорошо, что для этого придумали плагин <nobr>grunt-processhtml</nobr>! Если окружить теги <code>&lt;script&gt;</code> специальными комментариями (как мы и сделали в файле <code>index.html</code>):</p>
-					<pre><code class="language-markup">&lt;!-- build:script js/site.js --&gt;
+						<p>Gruntfile первым делом выполняет команду <code>jspm bundle-sfx js/main build/js/site.js</code> в командной строке. jspm анализирует зависимости модулей друг от друга и создает файл <code>site.js</code> в подпапке <code>build/</code>, содержащий объединенный код всех используемых модулей в правильном порядке.</p>
+		    			<p>Теперь было бы здорово автоматически заменять в <nobr>HTML-файлах</nobr> все теги <code>&lt;script&gt;</code> на единственный тег с подключением минифицированного файла <code>site.js</code>. Хорошо, что для этого придумали плагин <nobr>grunt-processhtml</nobr>! Если окружить теги <code>&lt;script&gt;</code> специальными комментариями (как мы и сделали в файле <code>index.html</code>):</p>
+						<pre><code class="language-markup">&lt;!-- build:script js/site.js --&gt;
 &lt;script src="jspm_packages/system.js"&gt;&lt;/script&gt;
 &lt;script src="config.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 	System.import('js/main');
 &lt;/script&gt;
 &lt;!-- /build --&gt;</code></pre>
-					<p>то плагин выполнит замену:</p>
-					<pre class="language-markup"><code>&lt;script src="js/site.js"&gt;&lt;/script&gt;</code></pre>
-					<p>Более того, если добавить к спецкомментариям слово <code>inline</code>, то скрипт или таблица стилей будет встроена прямо в файл — еще меньше запросов к серверу! C такими поправками файл станет полностью самодостаточным:</p>
-					<pre><code class="language-markup">&lt;html&gt;
+						<p>то плагин выполнит замену:</p>
+						<pre class="language-markup"><code>&lt;script src="js/site.js"&gt;&lt;/script&gt;</code></pre>
+						<p>Более того, если добавить к спецкомментариям слово <code>inline</code>, то скрипт или таблица стилей будет встроена прямо в файл — еще меньше запросов к серверу! C такими поправками файл станет полностью самодостаточным:</p>
+						<pre><code class="language-markup">&lt;html&gt;
 &lt;head&gt;
 	&lt;meta charset="UTF-8"&gt;
 	&lt;title&gt;My Super App&lt;/title&gt;
@@ -127,8 +150,9 @@
 	&lt;!-- /build --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-					<p>Такой воркфлоу я использую для публикации этого сайта.</p>
-				</div>
+						<p>Такой воркфлоу я использую для публикации этого сайта.</p>
+					</div>
+				</section>
 			</article>
 			<article class="post">
 				<header class="post__header">
@@ -138,13 +162,15 @@
 					</h2>
 					<time datetime="2015-04-12" class="post__date"></time>
 				</header>
-				<aside>Хуже всего, что записи удаляются из BBC iPlayer через месяц после эфира.</aside>
-				<p>Игги Поп ведет очень годный музыкальный эфир на BBC Radio 6 Music. Официально слушать эфиры в записи можно только через <a href="http://www.bbc.co.uk/programmes/b03yblbx/broadcasts/2015/05">BBC iPlayer</a>, что не всегда удобно. Я <a href="iggy/">сделал сайт</a>, куда выкладываются записи эфиров и <nobr>трек-листы</nobr>:</p>
-				<p class="image">
-					<a class="project-link" href="iggy/"><img data-src="i/iggy-radio.png" width="700" height="612" /></a>
-				</p>
-				<p><strong>Технологии:</strong> Backbone, RequireJS, Mustache, иконочный шрифт (использую <a href="https://icomoon.io/app/">IcoMoon App</a>, крутой инструмент), HTML5 Audio (написал клевую обертку над стандартным HTMLMediaElement, расскажу в следующий раз).</p>
-				<p>Проект поддерживается моими силами, новые эпизоды могут появляться с задержкой.</p>
+				<section class="post__content">
+					<aside>Хуже всего, что записи удаляются из BBC iPlayer через месяц после эфира.</aside>
+					<p>Игги Поп ведет очень годный музыкальный эфир на BBC Radio 6 Music. Официально слушать эфиры в записи можно только через <a href="http://www.bbc.co.uk/programmes/b03yblbx/broadcasts/2015/05">BBC iPlayer</a>, что не всегда удобно. Я <a href="iggy/">сделал сайт</a>, куда выкладываются записи эфиров и <nobr>трек-листы</nobr>:</p>
+					<p class="image">
+						<a class="project-link" href="iggy/"><img data-src="i/iggy-radio.png" width="700" height="612" /></a>
+					</p>
+					<p><strong>Технологии:</strong> Backbone, RequireJS, Mustache, иконочный шрифт (использую <a href="https://icomoon.io/app/">IcoMoon App</a>, крутой инструмент), HTML5 Audio (написал клевую обертку над стандартным HTMLMediaElement, расскажу в следующий раз).</p>
+					<p>Проект поддерживается моими силами, новые эпизоды могут появляться с задержкой.</p>
+				</section>
 			</article>
 			<article class="post">
 				<header class="post__header">
@@ -154,10 +180,12 @@
 					</h2>
 					<time datetime="2015-01-21" class="post__date">21 января 2015</time>
 				</header>
-				<p class="image">
-					<img data-src="i/irn-bru.jpg" width="700" height="204" />
-				</p>
-				<p>Попробовал напиток, постоянно попадавшийся на глаза, но который до этого ни разу не покупал: <nobr>Irn-Bru</nobr> — второй по известности шотландский напиток после скотча. Необычно, и <em>grows on you</em>. Вот еще напиток с названием из двух слов по три буквы: Mnt Dew.</p>
+				<section class="post__content">
+					<p class="image">
+						<img data-src="i/irn-bru.jpg" width="700" height="204" />
+					</p>
+					<p>Попробовал напиток, постоянно попадавшийся на глаза, но который до этого ни разу не покупал: <nobr>Irn-Bru</nobr> — второй по известности шотландский напиток после скотча. Необычно, и <em>grows on you</em>. Вот еще напиток с названием из двух слов по три буквы: Mnt Dew.</p>
+				</section>
 			</article>
 			<article class="post">
 				<header class="post__header">
@@ -167,14 +195,16 @@
 					</h2>
 					<time datetime="2015-01-19" class="post__date"></time>
 				</header>
-				<aside>Самому Твиттеру авторизация нужна для статистики: «This visibility [...] helps us to further understand how categories of applications are using the API». (<a href="https://dev.twitter.com/rest/public">Источник</a>)</aside>
-				<p>Текущий REST API Твиттера требует обязательной авторизации. Это неудобно и глупо, например, для чтения твитов из открытого аккаунта авторизация явно лишняя.</p>
-				<p>Зато при использовании виджетов авторизация не требуется, что дает возможность получить последние твиты пользователя (не более 20) чисто клиентским яваскриптом. Идея в том, чтобы загрузить виджет в скрытый контейнер на странице, а потом распарсить его содержание. Моя небольшая библиотека это и делает, использовать ее можно так:</p>
-				<pre><code class="language-javascript">loadTweets('123456789012345678', 10).done(function(tweets) {
+				<section class="post__content">
+					<aside>Самому Твиттеру авторизация нужна для статистики: «This visibility [...] helps us to further understand how categories of applications are using the API». (<a href="https://dev.twitter.com/rest/public">Источник</a>)</aside>
+					<p>Текущий REST API Твиттера требует обязательной авторизации. Это неудобно и глупо, например, для чтения твитов из открытого аккаунта авторизация явно лишняя.</p>
+					<p>Зато при использовании виджетов авторизация не требуется, что дает возможность получить последние твиты пользователя (не более 20) чисто клиентским яваскриптом. Идея в том, чтобы загрузить виджет в скрытый контейнер на странице, а потом распарсить его содержание. Моя небольшая библиотека это и делает, использовать ее можно так:</p>
+					<pre><code class="language-javascript">loadTweets('123456789012345678', 10).done(function(tweets) {
 	console.log(tweets);
 });</code></pre>
-				<p>Здесь первый параметр — ID виджета, созданного <a href="https://twitter.com/settings/widgets">в настройках профиля</a>, второй параметр — количество твитов для загрузки. Все работает асинхронно и возвращает jQuery Deferred, который разрешается массивом твитов.</p>
-				<p>Код, оформленный в виде модуля RequireJS, и крошечная документация доступны <a href="https://bitbucket.org/mavsic/loadtweets">в репозитории на битбакете</a>.</p>
+					<p>Здесь первый параметр — ID виджета, созданного <a href="https://twitter.com/settings/widgets">в настройках профиля</a>, второй параметр — количество твитов для загрузки. Все работает асинхронно и возвращает jQuery Deferred, который разрешается массивом твитов.</p>
+					<p>Код, оформленный в виде модуля RequireJS, и крошечная документация доступны <a href="https://bitbucket.org/mavsic/loadtweets">в репозитории на битбакете</a>.</p>
+				</section>
 			</article>
 		</main>
 		<footer class="site__footer footer">
