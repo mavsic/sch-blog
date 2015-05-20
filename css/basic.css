@@ -46,14 +46,12 @@ p:last-child {
 }
 
 .image img {
-	background: #F2F1EF;
 	vertical-align: middle;
-	max-width: 100%;
-	height: auto;
 }
 
 .image_unveiled img {
-	background: none;
+	max-width: 100%;
+	height: auto;
 }
 
 blockquote,
