@@ -19,28 +19,116 @@
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
-						Сложно ли сделать хороший музыкальный плеер?<!--
-						--><a name="perfect-player" href="#perfect-player" class="post__anchor"></a>
+						<a name="pepsi-vs-coca"></a>
+						<nobr>Песи-ко</nobr> против <nobr>Кока-кола</nobr> Компани<!--
+						--><a href="#pepsi-vs-coca" class="post__anchor"></a>
 					</h2>
-					<time datetime="2015-05-20" class="post__date"></time>
+					<time datetime="2015-09-29" class="post__date"></time>
 				</header>
 				<section class="post__content">
+					<p>Пепси обладает фатальным недостатком: <nobr>Пепси-кола</nobr>&nbsp;&mdash; ужасный напиток по&nbsp;сравнению с&nbsp;божественной <nobr>Кока-колой</nobr>. Не&nbsp;могу сказать точно, в&nbsp;чем там дело, но&nbsp;<nobr>Кока-кола</nobr>&nbsp;&mdash; это да, а&nbsp;<nobr>Пепси-кола</nobr>&nbsp;&mdash; это буээ. Даже <nobr>Пепси-макс</nobr>.</p>
 					<p class="image">
-						<img src="i/stab.png" data-src="i/perfect-player.png" width="960" height="382" />
+						<img src="stab.png" data-src="i/pepsi-vs-coca.jpg" width="500" height="400" />
 					</p>
-					<p class="lead">Судя по всему — да. Для Windows Phone пока никто не сделал. А казалось бы, всего четыре простых правила:</p>
-					<aside>Я указываю LP, EP или Single в теге <code>RELEASETYPE</code>, удобно для классификации.</aside>
-					<p><strong>Уважать пользовательские данные.</strong> Если у альбома уже указана обложка, не надо пытаться скачать другую из интернета, мне нравится моя. <em>Совсем</em> идеальный плеер поддерживает классификацию по любым тегам, указанным пользователем.</p>
-					<p><strong>Уметь сортировать альбомы по году.</strong> В сортировке альбомов по названию, на мой взгляд, мало смысла. Я легко представляю себе ситуацию, когда пользователь хочет послушать «ранних Битлов», а для перехода к конкретному альбому есть поиск.</p>
-					<p><strong>То, что сортируется по названию, — сортировать правильно.</strong> Артикли ‘a’, ‘an’, ‘the’ в начале названия исполнителя не должны учитываться при сортировке.</p>
-					<p><strong>Поддерживать альбомы из нескольких дисков.</strong> Обычно номер диска указывают в названии альбома: например, <em>The Next Day, Disc 1</em> и <em>The Next Day, Disc 2</em>, но правильнее делать это в специальном теге <code>DISCNUMBER</code>, который почти никто <nobr>почему-то</nobr> не поддерживает.</p>
+					<aside>&#185;&nbsp;&mdash; меня<br />
+						&#178;&nbsp;&mdash; я</aside>
+					<p>Этот недостаток заставлял многих&#185; считать, что продукция <nobr>Пепси-ко</nobr>&nbsp;&mdash; отстой по&nbsp;сравнению с&nbsp;аналогами <nobr>Кока-кола</nobr> Компани. Поэтому многие&#178; предпочитали пить Спрайт вместо <nobr>Севен-апа</nobr>, Фанту вместо Миринды и&nbsp;Пауэрейд вместо Гаторейда. Есть подозрение, что несколько лет назад кокакольные напитки действительно были круче пепсивых. Например, в&nbsp;моем детстве Миринда была редкостно ядовитым напитком, после которого язык становился оранжевым.</p>
+					<p>Недавно я&nbsp;случайно обнаружил, что <nobr>Севен-ап</nobr>&nbsp;&mdash; чудесный напиток с&nbsp;интересным вкусом, и&nbsp;Спрайт по&nbsp;сравнению с&nbsp;ним&nbsp;&mdash; просто сладкая вода. Я&nbsp;попробовал Миринду, и&nbsp;она оказалась более апельсиновой и&nbsp;менее сладкой, чем Фанта! Маунтин дью вообще легендарен и&nbsp;не&nbsp;имеет аналогов со&nbsp;стороны <nobr>Кока-колы</nobr>.</p>
+					<p><strong>Вывод:</strong> пейте <nobr>Кока-колу</nobr>, а&nbsp;все остальное&nbsp;&mdash; от&nbsp;Пепси.</p>
 				</section>
 			</article>
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
+						<a name="rimraf"></a>
+						Удаление папки <code>node_modules</code>: <em>source path too long</em><!--
+						--><a href="#rimraf" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-07-23" class="post__date"></time>
+				</header>
+				<section class="post__content">
+					<p>Менеджер пакетов npm не&nbsp;уплощает дерево зависимостей, поэтому часто создает пути невероятной вложенности. Вот, например, больше 260&nbsp;символов:</p>
+					<aside>Эта проблема <a href="https://github.com/joyent/node/issues/6960">несколько</a> <a href="https://github.com/npm/npm/issues/3697">раз</a> <a href="https://github.com/yatskevich/grunt-bower-task/issues/85">обсуждалась</a> на&nbsp;гитхабе.</aside>
+					<pre style="white-space: pre-wrap; word-break: break-all;"><code style="white-space: pre-wrap; word-break: break-all;">D:\my-project\node_modules\grunt-divshot\node_modules\superstatic\node_modules\broker\node_modules\deliver\node_modules\join-path\node_modules\as-array\node_modules\lodash.values\node_modules\lodash.keys\node_modules\lodash._shimkeys\node_modules\lodash._objecttypes</code></pre>
+					<p>Файловая система NTFS поддерживает пути даже длиннее 32 тысяч символов, но&nbsp;у&nbsp;Win32 возникают проблемы при работе с&nbsp;путями длиннее 260 символов. Например, при попытке удалить директорию <code>node_modules</code> возникнет ошибка:</p>
+					<p class="image">
+						<img src="stab.png" data-src="i/rimraf.png" width="449" height="189" />
+					</p>
+					<p>Самый простой способ <nobr>все-таки</nobr> удалить папку со&nbsp;слишком глубокой вложенностью&nbsp;&mdash; установить <a href="https://www.npmjs.com/package/rimraf">rimraf</a> и&nbsp;воспользоваться его интерфейсом командной строки:</p>
+					<pre><code class="laguage-bash">npm install rimraf -g
+rimraf node_modules</code></pre>
+					<p>На&nbsp;самом деле, удивительно, что стандартный проводник фейлится по&nbsp;сравнению с&nbsp;утилитой для <nobr>Node.js</nobr>.</p>
+				</section>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						<a name="musical-impressions"></a>
+						Почему я&nbsp;не&nbsp;соглашаюсь &laquo;покидать музыку&raquo;<!--
+						--><a href="#musical-impressions" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-07-22" class="post__date"></time>
+				</header>
+				<section class="post__content">
+					<p>Впечатлениями о&nbsp;музыке хочется делиться, но&nbsp;лучше этого не&nbsp;делать: они не&nbsp;переносимы, и&nbsp;все закончится разочарованием. Слушать любимую песню другого человека&nbsp;&mdash; мучение. Музыка работает на&nbsp;уровне эмоций, а&nbsp;эмоции одного человека не&nbsp;понятны другим. Никто не&nbsp;почувствует того, что чувствовали вы&nbsp;во&nbsp;время прослушивания.</p>
+					<p>Лучше обсуждайте книги и&nbsp;фильмы, которые работают на&nbsp;рациональном уровне. А&nbsp;музыка&nbsp;&mdash; очень личное дело.</p>
+				</section>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						<a name="void-teaser"></a>
+						Тизер нового проекта<!--
+						--><a href="#void-teaser" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-07-18" class="post__date"></time>
+				</header>
+				<section class="post__content">
+					<p class="image">
+						<img src="i/stab.png" data-src="i/void.gif" width="310" height="310" />
+					</p>
+					<p>Новый проект называется <em>vǿịd</em>, будет очень модным и&nbsp;откроется осенью.</p>
+				</section>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						<a name="player-sort"></a>
+						Сортировка в&nbsp;музыкальных плеерах<!--
+						--><a href="#player-sort" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-07-06" class="post__date"></time>
+				</header>
+				<section class="post__content">
+					<p>Умная текстовая сортировка должна уметь игнорировать артикли <em>a</em>, <em>an</em>, <em>the</em> в&nbsp;начале строки. Это особенно важно для музыкальный плееров: иначе половина исполнителей, вроде <em>The Beatles</em>, <em>The Kinks</em> и&nbsp;<em>The Who</em>, окажется на&nbsp;букву „T“.</p>
+					<p>Сортировка по&nbsp;алфавиту&nbsp;&mdash; пуленепробиваемый вариант. Но&nbsp;стоит также подумать о&nbsp;сортировке исполнителей по&nbsp;частоте прослушивания, альбомов по&nbsp;году выпуска и&nbsp;так далее.</p>
+				</section>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						<a name="medicina"></a>
+						Сайт <nobr>лечебно-диагностического</nobr> центра &laquo;Медицина&#8202;+&raquo;<!--
+						--><a href="#medicina" class="post__anchor"></a>
+					</h2>
+					<time datetime="2015-07-05" class="post__date"></time>
+				</header>
+				<section class="post__content">
+					<aside>Наполняется и&nbsp;поддерживается сотрудниками центра.</aside>
+					<p>Сделал сайт для <a href="http://medplusneft.ru/"><nobr>лечебно-диагностического</nobr> центра &laquo;Медицина&#8202;+&raquo;</a>. Сайт рассказывает о&nbsp;главном: услугах и&nbsp;ценах.</p>
+					<p class="image">
+						<a class="project-link" href="http://medplusneft.ru/"><img src="i/stab.png" data-src="i/medicina.png" width="960" height="777" /></a>
+					</p>
+					<p>Моя любимая фишка&nbsp;&mdash; &laquo;прозрачная&raquo; графика. Через иконки, границы и&nbsp;плашки на&nbsp;сайте просвечивает фоновый градиент, и&nbsp;эти элементы красиво переливаются от&nbsp;зеленого к&nbsp;фиолетовому при прокрутке страницы.</p>
+					<p>Сайт работает на&nbsp;<a href="https://bolt.cm/">Bolt CMS</a>, форма записи интегрирована с&nbsp;<nobr>гугл-документами</nobr>.</p>
+				</section>
+			</article>
+			<article class="post">
+				<header class="post__header">
+					<h2 class="post__title">
+						<a name="vrythm"></a>
 						Вертикальный ритм и врезки<!--
-						--><a name="vrythm" href="#vrythm" class="post__anchor"></a>
+						--><a href="#vrythm" class="post__anchor"></a>
 					</h2>
 					<time datetime="2015-05-18" class="post__date"></time>
 				</header>
@@ -62,8 +150,9 @@
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
+						<a name="jspm"></a>
 						Крутость jspm<!--
-						--><a name="jspm" href="#jspm" class="post__anchor"></a>
+						--><a href="#jspm" class="post__anchor"></a>
 					</h2>
 					<time datetime="2015-05-17" class="post__date"></time>
 				</header>
@@ -166,7 +255,7 @@
 					<aside>Хуже всего, что записи удаляются из BBC iPlayer через месяц после эфира.</aside>
 					<p>Игги Поп ведет очень годный музыкальный эфир на BBC Radio 6 Music. Официально слушать эфиры в записи можно только через <a href="http://www.bbc.co.uk/programmes/b03yblbx/broadcasts/2015/05">BBC iPlayer</a>, что не всегда удобно. Я <a href="iggy/">сделал сайт</a>, куда выкладываются записи эфиров и <nobr>трек-листы</nobr>:</p>
 					<p class="image">
-						<a class="project-link" href="iggy/"><img src="i/stab.png" data-src="i/iggy-radio.png" width="700" height="612" /></a>
+						<a class="project-link" href="iggy/"><img src="i/stab.png" data-src="i/iggy-radio.png" width="960" height="756" /></a>
 					</p>
 					<p><strong>Технологии:</strong> Backbone, RequireJS, Mustache, иконочный шрифт (использую <a href="https://icomoon.io/app/">IcoMoon App</a>, крутой инструмент), HTML5 Audio (написал клевую обертку над стандартным HTMLMediaElement, расскажу в следующий раз).</p>
 					<p>Проект поддерживается моими силами, новые эпизоды могут появляться с задержкой.</p>
@@ -175,8 +264,9 @@
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
+						<a name="irn-bru"></a>
 						Irn Bru<!--
-						--><a name="irn-bru" href="#irn-bru" class="post__anchor"></a>
+						--><a href="#irn-bru" class="post__anchor"></a>
 					</h2>
 					<time datetime="2015-01-21" class="post__date">21 января 2015</time>
 				</header>
@@ -190,8 +280,9 @@
 			<article class="post">
 				<header class="post__header">
 					<h2 class="post__title">
+						<a name="load-tweets"></a>
 						Загрузка твитов яваскриптом без авторизации <s>и смс</s><!--
-						--><a name="load-tweets" href="#load-tweets" class="post__anchor"></a>
+						--><a href="#load-tweets" class="post__anchor"></a>
 					</h2>
 					<time datetime="2015-01-19" class="post__date"></time>
 				</header>
