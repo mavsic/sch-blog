@@ -15,7 +15,7 @@ body {
 	display: block;
 	font-size: 15px;
 	line-height: 1rem;
-	margin: 2.5rem 5% 3.5rem 5%;
+	margin: 2.5rem 5.5% 3.5rem 5.5%;
 }
 
 .site__header {
@@ -29,7 +29,7 @@ body {
 
 .site__content {
 	display: block;
-	max-width: 960px;
+	max-width: 800px;
 	margin-bottom: 5rem;
 	width: 64%;
 }
@@ -43,6 +43,7 @@ body {
 }
 
 .post__anchor {
+	font-family: 'Arial Unicode MS', sans-serif;
 	display: none;
 	border: none;
 	vertical-align: middle;
@@ -89,7 +90,7 @@ body {
 aside {
 	float: right;
 	width: 32%;
-	margin-right: -44%;
+	margin-right: -43%;
 	font-size: 13px;
 }
 

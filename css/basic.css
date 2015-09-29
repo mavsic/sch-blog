@@ -36,6 +36,10 @@ p:last-child {
 	transition: opacity 0.25s, transform 0.25s;
 }
 
+.image:first-child {
+	margin-top: 0;
+}
+
 .image:last-child {
 	margin-bottom: 0;
 }
