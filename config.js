@@ -1,15 +1,14 @@
 System.config({
-  "baseURL": ".",
-  "transpiler": "traceur",
-  "paths": {
+  baseURL: ".",
+  defaultJSExtensions: true,
+  transpiler: "traceur",
+  paths: {
     "*": "js/*.js",
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
-  }
-});
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
+  },
 
-System.config({
-  "map": {
+  map: {
     "jquery": "github:components/jquery@2.1.3",
     "jquery-lazyload": "npm:jquery-lazyload@1.9.5",
     "luis-almeida/unveil": "github:luis-almeida/unveil@1.3.0",
@@ -18,4 +17,3 @@ System.config({
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
   }
 });
-
