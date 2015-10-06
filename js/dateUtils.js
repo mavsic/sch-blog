@@ -23,10 +23,10 @@
 				var nowWeek = DateUtils.getWeek(now);
 				var week = DateUtils.getWeek(date);
 				var weekDiff = nowWeek - week;
+				var day = DateUtils.getDay(date);
 
 				if (weekDiff <= 1) {
-					var day = DateUtils.getDay(date);
-					var humanized = 'В ';
+					humanized = day === 1 ? 'Во ' : 'В ';
 
 					if (weekDiff === 1) {
 						switch (day) {
