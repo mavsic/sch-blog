@@ -1,19 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
 @import url(basic.css);
 @import url(prism.css);
 
 html {
-	font-family: 'Helvetica Neue', Helvetica, 'Arial Unicode MS', Arial, sans-serif;
-	font-size: 24px;
+	font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+	font-size: 32px;
 }
 
 body {
 	margin: 0;
-	min-width: 720px;
+	min-width: 800px;
 }
 
 .site {
 	display: block;
-	font-size: 15px;
+	font-size: 18px;
 	line-height: 1rem;
 	margin: 2.5rem 5.5% 3.5rem 5.5%;
 }
@@ -29,9 +31,9 @@ body {
 
 .site__content {
 	display: block;
-	max-width: 800px;
+	max-width: 900px;
 	margin-bottom: 5rem;
-	width: 64%;
+	width: 70%;
 }
 
 .post {
@@ -43,19 +45,15 @@ body {
 }
 
 .post__anchor {
-	font-family: 'Arial Unicode MS', sans-serif;
 	display: none;
 	border: none;
-	vertical-align: middle;
-	font-weight: normal;
-	font-size: 27px;
-	width: 1rem;
-	margin: 0 -1.5rem 0 0.5rem;
-	line-height: 1;
+	width: 0.5rem;
+	margin: 0 -1rem 0 0.5rem;
+    text-align: center;
 }
 
 .post__anchor::after {
-	content: '✣';
+	content: '#';
 }
 
 .post__header:hover .post__anchor {
@@ -63,18 +61,15 @@ body {
 }
 
 .post__title {
-	font-size: 47px;
-	line-height: 2rem;
-	/* Left margin is a visual compensation for large letters */
-	margin: 0 0 0 -0.05em;
+    font-size: 1em;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2ex;
 }
 
 .post__date {
 	display: block;
-	text-transform: uppercase;
-	letter-spacing: 0.2em;
-	font-size: 11px;
-	margin: 0.125rem 0 -0.125rem;
 	opacity: 0;
 	transition: opacity 0.2s;
 }
@@ -89,9 +84,9 @@ body {
 
 aside {
 	float: right;
-	width: 32%;
-	margin-right: -43%;
-	font-size: 13px;
+	width: 35%;
+	margin-right: -45%;
+	font-size: 16px;
 }
 
 .project-link {
@@ -138,14 +133,9 @@ aside {
 	border-radius: 0 0 0.5rem 0.5rem;
 }
 
-.footer {
-	font-size: 11px;
-	font-weight: bold;
-}
-
 .footer::before {
 	content: '—';
 	display: block;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: normal;
 }

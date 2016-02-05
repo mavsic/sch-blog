@@ -20,7 +20,7 @@
 			} else if (daysToNow === 2) {
 				humanized = 'Позавчера';
 			} else {
-				var nowWeek = DateUtils.getWeek(now);
+				/* var nowWeek = DateUtils.getWeek(now);
 				var week = DateUtils.getWeek(date);
 				var weekDiff = nowWeek - week;
 				var day = DateUtils.getDay(date);
@@ -43,9 +43,9 @@
 					}
 
 					humanized += DateUtils.humanizeDay(day).accusative;
-				} else {
+				} else { */
 					humanized = DateUtils.format(date);
-				}
+				// }
 			}
 
 			return humanized;

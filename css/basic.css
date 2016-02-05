@@ -31,7 +31,7 @@ p:last-child {
 .image {
 	margin: 1.5rem 0;
 	opacity: 0;
-	width: 156.25%;
+	width: 142.85%;
 	transform: translate(0, 0.5rem);
 	transition: opacity 0.25s, transform 0.25s;
 }
@@ -64,6 +64,7 @@ pre {
 }
 
 :not(pre) > code {
+    font-family: inherit;
 	background: #ECF0F1;
 	border-radius: 3px;
 	padding: 0 0.2em;
@@ -114,11 +115,45 @@ ol > li::before {
 }
 
 .lead {
-	font-family: Georgia, 'Times New Roman', serif;
-	font-size: 17px;
+	font-size: 20px;
 }
 
 h3 {
-	font-size: 15px;
+	font-size: 1em;
 	margin: 2rem 0 1rem;
+}
+
+table {
+	border-collapse: collapse;
+	font-size: 16px;
+	margin: 0 0 1.5rem;
+}
+
+td,
+th {
+	padding-right: 0.5rem;
+}
+
+td:last-child,
+th:last-child {
+	padding-right: 0;
+}
+
+th {
+	font-weight: inherit;
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.td_numeric {
+	text-align: right;
+	white-space: nowrap;
+}
+
+em, strong {
+    font-style: normal;
+    font-weight: 400;
+}
+
+small {
+	font-size: 16px;
 }
