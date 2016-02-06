@@ -94,7 +94,24 @@ module.exports = function(grunt) {
 			all: {
 				src: ['build/']
 			}
-		}
+		},
+        
+        connect: {
+            // Serve unbundled site to http://localhost:8000
+            unbundled: {
+                options: {
+                    keepalive: true
+                }
+            },
+            
+            // Build and serve site to http://localhost:8000
+            bundled: {
+                options: {
+                    base: 'build',
+                    keepalive: true
+                }
+            }
+        }
 	});
 	
 	grunt.loadNpmTasks('grunt-shell');
@@ -103,6 +120,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-processhtml');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 
 	grunt.registerTask('build', [
 		'clean:all',
@@ -116,6 +134,10 @@ module.exports = function(grunt) {
 	]);
 
 	grunt.registerTask('cleanup', ['clean:all']);
+    
+    grunt.registerTask('debug', ['connect:unbundled']);
+    
+    grunt.registerTask('run', ['build', 'connect:bundled']);
 
 	grunt.registerTask('default', ['build']);
 
