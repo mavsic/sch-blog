@@ -141,7 +141,7 @@ th:last-child {
 
 th {
 	font-weight: inherit;
-	border-bottom: 1px solid #E1E1E1;
+	border-bottom: 1px solid #D2D7D3;
 }
 
 .td_numeric {
@@ -152,6 +152,8 @@ th {
 em, strong {
     font-style: normal;
     font-weight: 400;
+	color: #000;
+	text-shadow: 0 0 1px #D2D7D3;
 }
 
 small {

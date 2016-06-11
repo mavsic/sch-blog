@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&subset=latin,cyrillic);
 @import url(basic.css);
 @import url(prism.css);
 
@@ -11,6 +11,7 @@ html {
 body {
 	margin: 0;
 	min-width: 800px;
+	background: #F2F1EF;
 }
 
 .site {
@@ -18,6 +19,7 @@ body {
 	font-size: 18px;
 	line-height: 1rem;
 	margin: 2rem 6% 3.5rem;
+	color: #2C3E50;
 }
 
 .site__header {
@@ -42,6 +44,7 @@ body {
 
 .post__header {
 	margin:  0 0 1rem 0;
+	color: #DB0A5B;
 }
 
 .post__anchor {
